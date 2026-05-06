@@ -1,0 +1,47 @@
+class Dog:
+    def __init__(self, name, breed):
+        self.name = name  
+        self.breed = breed
+
+    def bark(self):
+        return f"{self.name} is barking!"
+
+# Object creation
+my_dog = Dog("tomy", "Indie") 
+
+# Method call (yahan output aayega: "tomy is barking!")
+print(my_dog.bark()) 
+
+# Bina bracket ke (yahan output aayega: <bound method Dog.bark of...>)
+print(my_dog.bark)
+
+
+
+
+
+
+class Vehicle:
+    def __init__(self, brand):
+        self.brand = brand
+
+class Car(Vehicle): 
+    def __init__(self, brand, model):
+        # super() ke sath 'self' nahi lagate
+        super().__init__(brand) 
+        self.model = model
+
+my_car = Car("Toyota", "Fortuner")
+print(my_car.brand) # Output: Toyota
+
+
+class BankAccount:
+    def __init__(self, amount):
+        self.__balance = amount # Make it private using double underscore
+
+    def get_balance(self):
+        return self.__balance
+
+account = BankAccount(1000)
+print(account.get_balance())
+
+#isme agr print(account.__balance) kruga to python error dega kyoki ye private kr diya he __ se
