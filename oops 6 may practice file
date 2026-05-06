@@ -45,3 +45,23 @@ account = BankAccount(1000)
 print(account.get_balance())
 
 #isme agr print(account.__balance) kruga to python error dega kyoki ye private kr diya he __ se
+
+
+
+
+                                    #Polymorphism
+class Animal:
+    def speak(self):
+        pass
+
+class Cat(Animal):
+    def speak(self): # Fill method name
+        return "Meow"
+
+class Dog(Animal):
+    def speak(self):
+        return "bhau bhau" # Fill what a dog says
+
+animals = [Cat(), Dog()]
+for animal in animals:
+    print(animal.speak())
