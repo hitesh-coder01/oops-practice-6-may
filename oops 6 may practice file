@@ -65,3 +65,47 @@ class Dog(Animal):
 animals = [Cat(), Dog()]
 for animal in animals:
     print(animal.speak())
+
+
+
+
+#half program oops
+class Book:
+	SchoolName="Ameerpetschool"
+@classmethod
+def showschoolname(cls):
+	print("schoolkaname",cls.SchoolName)
+
+	def __init__(self,author,title,price):
+		self.author=author
+		self.title=title
+		self.__price=price
+
+
+	def display_info(self):
+		print("author:",self.author)
+		print("title:",self.title)
+		print("SchoolName",Book.SchoolName)
+
+
+	def show_price(self):
+		print(self.__price)
+
+class DigitalBook(Book):
+	def __init__(self,title,author,price,filesize):
+		super().__init__(author,title,price)
+		self.file_size= "file_size"
+
+
+
+	def display_info(self):
+		super().display_info()
+		print(self.file_size)
+
+my_book=DigitalBook("numpy","guido",350,5.5)
+H=DigitalBook("panda","van",400,23)
+my_book.display_info()
+H.display_info()
+my_book.show_price()
+H.show_price()
+Book.showschoolname()
