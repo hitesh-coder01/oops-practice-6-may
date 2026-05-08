@@ -1,0 +1,35 @@
+class Smartphone:
+	ostype="android"
+
+	def __init__(self,brand,model):
+		self.brand=brand
+		self.model=model
+		self.__battery_health= 100
+
+	def showdetails(self):
+		print(self.brand)
+		print(self.model)
+
+	@classmethod
+	def show_os(cls):
+		print(cls.ostype)
+
+class PremiumPhone(Smartphone):
+	def __init__(self,brand,model,cameramegapixels):
+		super().__init__(brand,model)
+		self.cameramegapixels=cameramegapixels
+	def showdetails(self):
+		super().showdetails()
+		print(self.cameramegapixels)
+
+print("========normal phone======")
+H=Smartphone("vivo","v1")
+H.showdetails()
+Smartphone.show_os()
+
+print("========premium phone======")
+p1= PremiumPhone("samsung","s23",200)
+p1.showdetails()
+Smartphone.show_os()
+print("======common info=====")
+Smartphone.show_os()
